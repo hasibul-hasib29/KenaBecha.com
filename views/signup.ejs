@@ -1,0 +1,165 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>signup</title>
+</head>
+
+<body>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+  
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Sign-up</h1>
+    <section class="body-section">
+      <div class="album py-5 bg-body-tertiary">
+          <div class="container">
+
+              <% if (typeof alertMessage !== "undefined") { %>
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= alertMessage %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <% } %>
+
+                
+              <h2>Welcome to KenaBecha!</h2>
+              <p>Click the Sign-up button to create an account.</p>
+          </div>
+      </div>
+  </section>
+
+    <div>
+      <form action="/signup" method="post">
+        <!-- Name -->
+        <div class="input-group mb-4">
+          <span class="input-group-text">Name</span>
+          <input type="text" name="name" aria-label="name" class="form-control" required>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-auto">
+            <label for="mobileNumber" class="col-form-label">Mobile Number</label>
+          </div>
+          <div class="col-auto">
+            <input type="tel" name="mobile_number" id="mobileNumber" class="form-control" aria-describedby="mobileHelp" required>
+          </div>
+          <div class="col-auto">
+            <span id="mobileHelp" class="form-text">Enter a valid phone number.</span>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-auto">
+            <label for="exampleInputEmail1" class="col-form-label">Email Address</label>
+          </div>
+          <div class="col-auto">
+            <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+          <div class="col-auto">
+            <span id="emailHelp" class="form-text">We'll never share your email with anyone else.</span>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-auto">
+            <label for="exampleInputPassword1" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            <!-- <input type="password" name="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required> -->
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+          </div>
+          <div class="col-auto">
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- 
+<script>
+  document.querySelector("form").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message); // Success message
+        // Optionally redirect the user to a login page or another page
+        window.location.href = "/login";
+      } else {
+        const error = await response.json();
+        alert(error.message); // Error message from server
+        // Clear email field if the error is related to email
+        if (error.message.includes("email")) {
+          form.querySelector('[name="email"]').value = "";
+        }
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+      alert("An unexpected error occurred. Please try again.");
+    }
+  });
+</script> -->
+
+
