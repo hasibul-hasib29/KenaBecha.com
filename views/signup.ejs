@@ -2,293 +2,82 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <title>signup</title>
+  <title>Sign Up | kenaBecha.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
-
-  <!-- Optional JavaScript; choose one of the two! -->
+<body class="gradient-background">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-xl">
+    <div class="container">
       <a class="navbar-brand fw-bold" href="/home" style="font-family: Consolas;">kenaBecha.com</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL"
-        aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample07XL">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" id="catalog" href="/catalog">Catalog</a></li>
-          <!-- Add About Us Navigation Item -->
-          <li class="nav-item">
-            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#aboutUsModal">About Us</a>
-          </li>
-
-          <!-- About Us Modal -->
-          <div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="aboutUsModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="aboutUsModalLabel">About Us</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    This project is developed as part of the CSE 3100 course. Our goal is to promote
-                    the reuse of old and unused
-                    products by creating a platform where users can buy and sell preloved items.
-                    Through this, we aim to reduce
-                    waste and provide value to both sellers and buyers.
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="faqDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              FAQs
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="faqDropdown">
-              <!-- Modal Trigger -->
-              <li>
-                <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#whatiskenabecha">
-                  What is kenaBecha.com?
-                </button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#listItemModal">
-                  How do I list an item for sale?
-                </button>
-              </li>
-            </ul>
-          </li>
-
-          <!-- Modal -->
-          <div class="modal fade" id="whatiskenabecha" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="staticBackdropLabel">What is kenaBecha.com?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    <strong>KenaBecha.com</strong> is an online platform designed to facilitate the
-                    buying and selling of preloved and unused items. The goal is to promote the
-                    reuse of products, reduce waste, and create a marketplace where sellers can find
-                    buyers and buyers can discover affordable, second-hand treasures. It's a
-                    user-friendly solution for decluttering your space while giving old items a new
-                    life.
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="listItemModal" tabindex="-1" aria-labelledby="listItemModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="listItemModalLabel">How do I list an item for sale?</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    To list an item for sale on <strong>kenaBecha.com</strong>, please follow these
-                    steps:
-                  </p>
-                  <ol>
-                    <li>
-                      <strong>Login or Signup:</strong> You need to have an account. If you’re not
-                      logged in, use the "Login" or "Sign-up" option in the top-right corner of
-                      the website.
-                    </li>
-                    <li>
-                      After Successfully Logged-in , click on the <strong>Catalog</strong> option
-                      in the navigation bar.
-                    </li>
-                    <li>
-                      <strong>Navigate to Upload Item:</strong> After logging in, click on the
-                      <strong>Upload Item</strong> option in the navigation bar.
-                    </li>
-                    <li>
-                      <strong>Fill the Upload Form:</strong>
-                      Provide the following details about your product:
-                      <ul>
-                        <li>Upload a cover photo and additional pictures of the product.</li>
-                        <li>Enter the product name, price, and description.</li>
-                        <li>Provide your contact number and the product's location.</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <strong>Submit the Form:</strong> Once all the details are filled in, click
-                      on the "Submit Form" button.
-                    </li>
-                    <li>
-                      <strong>Listed Successfully:</strong> Your product will now be listed in the
-                      catalog and visible to other users.
-                    </li>
-                  </ol>
-                  <p>
-                    Please ensure you follow our guidelines for listing items to maintain a safe and
-                    friendly marketplace.
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="/catalog">Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#aboutUsModal" data-bs-toggle="modal">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faqModal" data-bs-toggle="modal">FAQs</a></li>
         </ul>
-        <div class="d-flex">
-
+        <div class="ms-auto">
           <a href="/login" class="btn btn-outline-light me-2">Login</a>
-          <a href="/signup" class="btn btn-warning">Sign-up</a>
+          <a href="/signup" class="btn btn-warning">Sign Up</a>
         </div>
-
-
-
-
       </div>
     </div>
   </nav>
 
+  <!-- Signup Form -->
   <div class="container my-5">
-    <div class="p-5 text-center bg-body-tertiary rounded-3">
-      
-      <section class="body-section">
-        <div class="album py-4 bg-body-tertiary">
-          <div class="container">
-
-            <% if (typeof alertMessage !=="undefined" ) { %>
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <%= alertMessage %>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              <% } %>
-
-
-                <h2>Welcome to KenaBecha!</h2>
-
-          </div>
-        </div>
-      </section>
-
-
-      <div class="container card border border-dark shadow-lg  mb-5 mt-5 bg-body-tertiary rounded p-0">
-
-        <h5 class="card-header text-center bg-secondary text-white m-0">Sign Up to our service 😀</h5>
-
-
-        <div class="card-body">
-          <div>
+    <h2 class="text-center mb-4">Welcome to kenaBecha.com!</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <h5 class="card-header text-center">Sign Up</h5>
+          <div class="card-body">
+            <% if (typeof alertMessage !== "undefined") { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= alertMessage %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
             <form action="/signup" method="post">
-              <!-- Name -->
-              <div class="input-group mb-4">
+              <div class="input-group mb-3">
                 <span class="input-group-text">Name</span>
-                <input type="text" name="name" aria-label="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" required>
               </div>
-
-              <!-- Mobile Number -->
-              <div class="row g-3 align-items-center mb-4">
-                <div class="col-auto">
-                  <label for="mobileNumber" class="col-form-label">Mobile Number</label>
-                </div>
-                <div class="col-auto">
-                  <input type="tel" name="mobile_number" id="mobileNumber" class="form-control"
-                    aria-describedby="mobileHelp" required>
-                </div>
-                <div class="col-auto">
-                  <span id="mobileHelp" class="form-text">Enter a valid phone number.</span>
-                </div>
+              <div class="mb-3">
+                <label for="mobileNumber" class="form-label">Mobile Number</label>
+                <input type="tel" name="mobile_number" id="mobileNumber" class="form-control" placeholder="+8801234567890" pattern="^\+880[0-9]{10}$" required>
+                <div class="form-text">Enter a valid Bangladeshi phone number.</div>
               </div>
-
-              <!-- Email -->
-              <div class="row g-3 align-items-center mb-4">
-                <div class="col-auto">
-                  <label for="exampleInputEmail1" class="col-form-label">Email Address</label>
-                </div>
-                <div class="col-auto">
-                  <input type="email" name="email_address" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" required>
-                </div>
-                <div class="col-auto">
-                  <span id="emailHelp" class="form-text">We'll never share your email with anyone else.</span>
-                </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" name="email_address" class="form-control" id="email" placeholder="name@example.com" required>
+                <div class="form-text">We'll never share your email with anyone else.</div>
               </div>
-
-              <!-- Password -->
-              <div class="row g-3 align-items-center mb-4">
-                <div class="col-auto">
-                  <label for="exampleInputPassword1" class="col-form-label">Password</label>
-                </div>
-                <div class="col-auto">
-                  <!-- <input type="password" name="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required> -->
-                  <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
-                </div>
-                <div class="col-auto">
-                </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
               </div>
-
-              <!-- Submit Button -->
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary w-100">Sign Up</button>
             </form>
           </div>
-
         </div>
       </div>
+    </div>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-      <!-- Option 2: Separate Popper and Bootstrap JS -->
-      <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
+  <!-- Optional JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
+
 
 
 

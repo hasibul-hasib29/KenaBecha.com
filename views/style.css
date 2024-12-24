@@ -1,5 +1,5 @@
 .gradient-background {
-    background: linear-gradient(300deg, #c0c5c7, #eedcde, #ef8172);
+    background: linear-gradient(300deg, #75b6d0, #87d07f, #1c1e1c);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }
@@ -14,4 +14,34 @@
     100% {
       background-position: 0% 50%;
     }
+  }
+
+
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f8f9fa;
+    color: #212529;
+  }
+  .card-header {
+    font-size: 1.5rem;
+    background: #343a40;
+    color: #fff;
+  }
+  .btn-primary {
+    background: #2575fc;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: #1d62d1;
+  }
+  .input-group-text {
+    background: #2575fc;
+    color: #fff;
+  }
+  .form-text {
+    color: #6c757d;
+  }
+  .container h2 {
+    color: #fff;
   }

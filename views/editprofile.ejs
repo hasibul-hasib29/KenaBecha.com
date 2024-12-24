@@ -14,79 +14,66 @@
 </head>
 
 <body>
+  <div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3 shadow">
+      <h1 class="text-primary">Edit Profile</h1>
+      <p class="text-muted">Update your profile details below</p>
 
-<div class="container my-5">
-  <div class="p-5 text-center bg-body-tertiary rounded-3">
-    <h1 class="text-body-emphasis">Edit Profile</h1>
-    <section class="body-section">
-      <div class="album py-5 bg-body-tertiary">
+      <section class="body-section">
+        <div class="album py-4 bg-body-tertiary">
           <div class="container">
-
-              <% if (typeof alertMessage !== "undefined") { %>
-                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <%= alertMessage %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                <% } %>
-
-              <h2>Update Your Profile Information</h2>
-              <p>Update your name, phone number, and password.</p>
+            <% if (typeof alertMessage !== "undefined") { %>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= alertMessage %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <% } %>
           </div>
+        </div>
+      </section>
+
+      <div class="card mx-auto shadow-lg border-0" style="max-width: 600px;">
+        <div class="card-body">
+          <form action="/editprofile" method="post">
+            <!-- Name -->
+            <div class="mb-4">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-control" value="<%= user.name %>" required>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="mb-4">
+              <label for="mobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" id="mobileNumber" name="mobile_number" class="form-control" value="<%= user.mobile_number %>" required>
+              <div class="form-text">Enter a valid phone number.</div>
+            </div>
+
+            <!-- Old Password -->
+            <div class="mb-4">
+              <label for="oldPassword" class="form-label">Old Password</label>
+              <input type="password" id="oldPassword" name="old_password" class="form-control" placeholder="Enter your current password" required>
+            </div>
+
+            <!-- New Password -->
+            <div class="mb-4">
+              <label for="newPassword" class="form-label">New Password</label>
+              <input type="password" id="newPassword" name="new_password" class="form-control" placeholder="Enter your new password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary py-2">Update Profile</button>
+            </div>
+          </form>
+        </div>
       </div>
-  </section>
-
-    <div>
-      <form action="/editprofile" method="post">
-        <!-- Name -->
-        <div class="input-group mb-4">
-          <span class="input-group-text">Name</span>
-          <input type="text" name="name" aria-label="name" class="form-control" value="<%= user.name %>" required>
-        </div>
-
-        <!-- Mobile Number -->
-        <div class="row g-3 align-items-center mb-4">
-          <div class="col-auto">
-            <label for="mobileNumber" class="col-form-label">Mobile Number</label>
-          </div>
-          <div class="col-auto">
-            <input type="tel" name="mobile_number" id="mobileNumber" class="form-control" aria-describedby="mobileHelp" value="<%= user.mobile_number %>" required>
-          </div>
-          <div class="col-auto">
-            <span id="mobileHelp" class="form-text">Enter a valid phone number.</span>
-          </div>
-        </div>
-
-        <!-- Old Password -->
-        <div class="row g-3 align-items-center mb-4">
-          <div class="col-auto">
-            <label for="oldPassword" class="col-form-label">Old Password</label>
-          </div>
-          <div class="col-auto">
-            <input type="password" name="old_password" id="oldPassword" class="form-control" required>
-          </div>
-        </div>
-
-        <!-- New Password -->
-        <div class="row g-3 align-items-center mb-4">
-          <div class="col-auto">
-            <label for="newPassword" class="col-form-label">New Password</label>
-          </div>
-          <div class="col-auto">
-            <input type="password" name="new_password" id="newPassword" class="form-control" required>
-          </div>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary">Update Profile</button>
-      </form>
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
 </body>
+
 
 </html>

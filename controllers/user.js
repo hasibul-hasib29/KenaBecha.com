@@ -170,6 +170,12 @@ async function handleProductUpload(req, res) {
       alertMessage: "Cover photo is required.",
     });
   }
+  if (!additionalPhotos || additionalPhotos.length === 0) {
+    return res.render("uploaditem", {
+      user: req.user,
+      alertMessage: "Additional Photos of your product is required",
+    });
+  }
 
   // Validation: Ensure valid product price
   if (!productPrice || isNaN(productPrice) || productPrice <= 0) {
