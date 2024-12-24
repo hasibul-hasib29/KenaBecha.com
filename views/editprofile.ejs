@@ -44,7 +44,7 @@
             <!-- Mobile Number -->
             <div class="mb-4">
               <label for="mobileNumber" class="form-label">Mobile Number</label>
-              <input type="tel" id="mobileNumber" name="mobile_number" class="form-control" value="<%= user.mobile_number %>" required>
+              <input type="tel" id="mobileNumber" name="mobile_number" class="form-control" value="<%= user.mobile_number %>" pattern="^\+880[0-9]{10}$" required>
               <div class="form-text">Enter a valid phone number.</div>
             </div>
 
