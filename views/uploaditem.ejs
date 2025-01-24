@@ -105,16 +105,34 @@
       
 
       <!-- Location -->
-      <div class="row mb-3">
+      <!-- <div class="row mb-3">
         <label for="contactNumber" class="col-sm-2 col-form-label fw-bold text-start">Contact Number</label>
         <div class="col-sm-10">
           <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="+8801234567890"
             pattern="^\+880[0-9]{10}$" required>
-          <div class="invalid-tooltip">
+          <div class="form-text">
+            Please enter a valid contact number (e.g., +8801234567890).
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row mb-3">
+        <label for="contactNumber" class="col-sm-2 col-form-label fw-bold text-start">Contact Number</label>
+        <div class="col-sm-10">
+          <input type="tel" 
+                 class="form-control" 
+                 id="contactNumber" 
+                 name="contactNumber" 
+                 placeholder="+8801234567890"
+                 pattern="^\+880[0-9]{10}$" 
+                 
+                 required>
+          <div class="form-text">
             Please enter a valid contact number (e.g., +8801234567890).
           </div>
         </div>
       </div>
+      
 
       <div class="row mb-3">
         <label for="productLocation" class="col-sm-2 col-form-label fw-bold text-start">Location</label>

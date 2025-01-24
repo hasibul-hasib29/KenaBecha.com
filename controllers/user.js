@@ -355,7 +355,8 @@ SELECT
     subquery.created_at as created_at,
     subquery.cover_photo as cover_photo ,
     subquery.other_photos as other_photos,
-    ps.status AS product_status
+    ps.status AS product_status,
+    users.name AS seller_name
 FROM (
     SELECT 
         p.id AS product_id,
@@ -364,6 +365,7 @@ FROM (
         p.price AS product_price,
         p.location AS product_location,
         p.contact_number AS contact_number,
+        p.email_address as email_address,
         p.created_at,
         GROUP_CONCAT(CASE WHEN uf.is_cover THEN uf.filepath END) AS cover_photo,
         GROUP_CONCAT(CASE WHEN NOT uf.is_cover THEN uf.filepath END) AS other_photos
@@ -371,7 +373,8 @@ FROM (
     LEFT JOIN uploaded_files uf ON p.id = uf.product_id
     GROUP BY p.id
 ) subquery
-LEFT JOIN product_status ps ON subquery.product_id = ps.product_id;
+LEFT JOIN product_status ps ON subquery.product_id = ps.product_id 
+left join users on subquery.email_address = users.email_address;
 
   `;
 
@@ -379,6 +382,7 @@ LEFT JOIN product_status ps ON subquery.product_id = ps.product_id;
       const [files] = await connection.query(sql);
 
       const formattedFiles = files.map(file => ({
+          seller_name: file.seller_name,
           product_id: file.product_id,
           product_name: file.product_name || "No name available",
           description: file.product_description || "No description available",
@@ -518,8 +522,8 @@ async function handleEditProfile(req, res) {
       "UPDATE users SET name = ?, mobile_number = ?, password = ? WHERE email_address = ?",
       [name, mobile_number, hashedNewPassword, userEmail]
     );
-
-    res.render("login", { alertMessage: "Profile Updated Successfully! Login Again.." });
+    res.clearCookie("uid"); 
+    res.render("home", { alertMessage: "Profile Updated Successfully! Login Again.." });
   } catch (error) {
     console.error("Error updating profile:", error);
     res.status(500).render("editprofile", {

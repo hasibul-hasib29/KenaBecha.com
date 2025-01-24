@@ -37,7 +37,7 @@
       <% for (let rowIndex = 0; rowIndex < files.length; rowIndex += 3) { %>
       <div class="row g-4">
         <% for (let colIndex = rowIndex; colIndex < rowIndex + 3 && colIndex < files.length; colIndex++) { %>
-        <div class="col-md-4">
+        <div class="col-md-4 my-4">
           <div class="card shadow-lg border-0 rounded-lg h-100">
             <% if (files[colIndex].cover_photo) { %>
               <div style="width: 360px; height: 360px; display: flex; justify-content: center; align-items: center; background-color: #f8f9fa; overflow: hidden;">
@@ -45,6 +45,7 @@
                      alt="Cover Photo" 
                      style="max-width: 100%; max-height: 100%; object-fit: scale-down;">
               </div>
+              
             <% } else { %>
             <div class="d-flex justify-content-center align-items-center bg-light" style="height: 225px;">
               <p class="text-muted">No Image Available</p>
@@ -52,17 +53,22 @@
             <% } %>
   
             <div class="card-body">
-              <h5 class="card-title text-primary mb-3">
-                <strong>Product Name:</strong> <%= files[colIndex].product_name %>
+              <h5 class="card-title  mb-3">
+                <strong>Product Name:</strong> <span class="text-primary"> <%= files[colIndex].product_name %> </span> 
               </h5>
               <p class="card-text text-muted">
                 <strong>Description:</strong> <%= files[colIndex].description %>
               </p>
               <ul class="list-group list-group-flush mb-3">
                 <li class="list-group-item">
+                  <strong>Uploaded by - </strong>
+                  <span class="text-danger fw-bold"> <%= files[colIndex].seller_name  %></span>
+                </li>
+                <li class="list-group-item">
                   <strong>Price:</strong>
                   <span class="text-success fw-bold">$<%= files[colIndex].price %></span>
                 </li>
+
                 <li class="list-group-item">
                   <strong>Location:</strong> <%= files[colIndex].location %>
                 </li>
